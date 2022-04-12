@@ -131,7 +131,7 @@ const createList = (availableItems) => {
   return invArray;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
 Write a function named fizzbuzz that takes in an array of numbers.
