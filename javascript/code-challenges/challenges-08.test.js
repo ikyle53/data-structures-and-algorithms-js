@@ -135,16 +135,14 @@ pattern to return a new array containing any cities that begin with the letters 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let reg = /\S[A-J][a-z]*/g;
-  for (let i = 0; i < arr.length; i++) {
-    arr[i].match(reg);
-  }
+  let reg = /^[A-J]/;
+  return arr.filter((items) => reg.test(items));
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-You have created a game application and begin by asking users an easy question: In which month is Halloween?
+You have created a game application an d begin by asking users an easy question: In which month is Halloween?
 
 Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
 
