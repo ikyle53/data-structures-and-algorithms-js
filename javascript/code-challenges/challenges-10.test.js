@@ -115,14 +115,18 @@ for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  console.log(hours);
-  console.log(data);
+  let newArr = [];
+  data.forEach((sale, idx) => {
+    newArr.push({ sales: `${sale} cookies`, time: hours[idx] });
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
+Write a function named howManyTreats that will return the quantity of treats you need to pick up from the
+pet store today from this array. The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
 
 const errands = [
@@ -141,7 +145,17 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let result = 0;
+  for (let errand of arr) {
+    if (errand.store === 'Pet store') {
+      for (let item of errand.items) {
+        if (item.name === 'Treats') {
+          result = item.quantity;
+        }
+      }
+    }
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
